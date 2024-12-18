@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddViewController: UIViewController {
 
     @IBOutlet weak var gellaryImage: UIImageView! // 이미지
     @IBOutlet weak var tfName: UITextField! // 이름 텍스트 필드
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
 
  // ImagePicker Extension
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // 이미지 선택
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
