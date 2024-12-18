@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DBModel{
+class DBModel: Codable{
     var name: String
     var phone: String
     var image: String
