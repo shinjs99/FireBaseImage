@@ -85,53 +85,39 @@ class TableViewController: UITableViewController {
             task.resume()
         }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgEdit" {
-//            let cell = sender as! UITableViewCell // cell 지정
-            // index 찾기
-//            let editView = segue.destination as! EditViewController // 페이지 지정
-            // 값 넘겨주기
-        }else if segue.identifier == "sgAdd"{
-//            let addView = segue.destination as! AddViewController
-            
-                
+            guard let cell = sender as? UITableViewCell else {
+                print("Sender is not a UITableViewCell")
+                return
+            }
+            guard let cellIndex = self.tableView.indexPath(for: cell) else {
+                print("Failed to get indexPath for cell")
+                return
+            }
+
+            if let editPage = segue.destination as? EditViewController {
+                // EditViewController로 데이터 전달
+                let data = dataArray[cellIndex.row]
+                editPage.receiveId = data.id
+                editPage.receiveName = data.name
+                editPage.receivePhone = data.phone
+                editPage.receiveAddress = data.address
+                editPage.receiveRelation = data.relation
+            } else if let navController = segue.destination as? UINavigationController,
+                      let editPage = navController.topViewController as? EditViewController {
+                // Navigation Controller를 통한 Segue 처리
+                let data = dataArray[cellIndex.row]
+                editPage.receiveId = data.id
+                editPage.receiveName = data.name
+                editPage.receivePhone = data.phone
+                editPage.receiveAddress = data.address
+                editPage.receiveRelation = data.relation
+//                editPage.receiveImage = 
+
+            } else {
+                print("Segue destination is not EditViewController")
             }
         }
-    
-
-}
+    }}

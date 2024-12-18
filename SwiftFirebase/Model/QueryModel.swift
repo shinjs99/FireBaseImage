@@ -15,13 +15,13 @@ class QueryModel {
             
             for document in snapshot!.documents {
                 let data = document.data()
-                
+                let id = document.documentID
                 let name = data["name"] as? String ?? "Unknown"
                 let phone = data["phone"] as? String ?? "Unknown"
                 let image = data["image"] as? String ?? "Unknown"
                 let relation = data["relation"] as? String ?? "Unknown"
                 let address = data["address"] as? String ?? "Unknown"
-                let user = DBModel(name: name, phone: phone, image: image, relation: relation, address: address)
+                let user = DBModel(id: id ,name: name, phone: phone, image: image, relation: relation, address: address)
                 print(image)
                 print(user)
                 userList.append(user)
