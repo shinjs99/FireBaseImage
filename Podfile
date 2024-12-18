@@ -8,4 +8,5 @@ target 'SwiftFirebase' do
   # Pods for SwiftFirebase
   pod 'Firebase/Auth'          # Firebase Authentication
   pod 'Firebase/Firestore'     # Firestore Database
+  pod 'Firebase/Storage'       # Firestore Storage
 end

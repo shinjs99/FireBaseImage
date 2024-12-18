@@ -51,7 +51,7 @@ class TableViewController: UITableViewController {
 
         var content = cell.defaultContentConfiguration()
         content.text = user.name
-        content.secondaryText = user.relation
+        content.secondaryText = user.phone
         
         if let url = URL(string: user.image) {
                    loadImage(from: url) { image in
@@ -59,7 +59,7 @@ class TableViewController: UITableViewController {
                            if let updatedCell = tableView.cellForRow(at: indexPath) {
                                var updatedContent = updatedCell.defaultContentConfiguration()
                                updatedContent.text = user.name
-                               updatedContent.secondaryText = user.relation
+                               updatedContent.secondaryText = user.phone
                                updatedContent.image = image // 로드된 이미지 설정
                                updatedCell.contentConfiguration = updatedContent
                            }

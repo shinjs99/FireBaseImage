@@ -131,6 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="주소록 입력" id="NA1-OL-xFO"/>
                     <connections>
+                        <outlet property="btnAdd" destination="sze-hy-8rK" id="PUP-mT-mP6"/>
                         <outlet property="gellaryImage" destination="vIr-C0-Rhu" id="ray-hw-IQb"/>
                         <outlet property="tfAddress" destination="Xah-I0-Mh6" id="HD7-DF-IIf"/>
                         <outlet property="tfName" destination="Bi4-rM-eAw" id="jiP-b4-D2t"/>
