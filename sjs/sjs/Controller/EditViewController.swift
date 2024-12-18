@@ -8,10 +8,28 @@
 import UIKit
 
 class EditViewController: UIViewController {
-
+        
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfPhone: UITextField!
+    @IBOutlet weak var tfAddress: UITextField!
+    @IBOutlet weak var tfRelation: UITextField!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    var receiveName = ""
+    var receivePhone = ""
+    var receiveAddress = ""
+    var receiveRelation = ""
+    var receiveimage : UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tfName.text = receiveName
+        tfPhone.text = receivePhone
+        tfAddress.text = receiveAddress
+        tfRelation.text = receiveRelation
+        imageView.image = receiveimage
         // Do any additional setup after loading the view.
     }
     
