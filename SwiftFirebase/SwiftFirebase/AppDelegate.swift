@@ -2,22 +2,23 @@
 //  AppDelegate.swift
 //  SwiftFirebase
 //
-//  Created by mac on 12/18/24.
+//  Created by 하동훈 on 19/12/2024.
 //
 
 import UIKit
-import Firebase
-
+import FirebaseCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        print("...FirebaseApp configured")
         return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

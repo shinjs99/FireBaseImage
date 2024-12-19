@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  SwiftFirebase
 //
-//  Created by mac on 12/18/24.
+//  Created by 하동훈 on 19/12/2024.
 //
 
 import UIKit
